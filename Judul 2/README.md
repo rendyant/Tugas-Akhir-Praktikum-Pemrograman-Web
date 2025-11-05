@@ -15,13 +15,13 @@
 ![Branch Trying](./images/branch.png)
 ![Git Merge](./images/merge.png)
 
-### 4. Git Remote -V
+### 4. Git Remote -v
 ![Git Remote](./images/gitremote-v.png)
 
-### 4. Git Push
+### 5. Git Push
 ![Git Push](./images/push-uorigin.png)
 
-### 5. Melihat riwayat commit menggunakan `git log --graph --oneline`
+### 6. Melihat riwayat commit menggunakan `git log --graph --oneline`
 ![Git Log](./images/gitlog.png)
 
 ---
