@@ -27,13 +27,10 @@ Langkah-langkah yang dilakukan antara lain:
 ![Branch Trying](./images/branch.png)
 ![Git Merge](./images/merge.png)
 
-### 4. Git add file dan commit -m
-![Git Add File](./images/gitaddfile.png)
-
-### 5. Git Push
+### 4. Git Push
 ![Git Push](./images/push-uorigin.png)
 
-### 6. Melihat riwayat commit menggunakan `git log --graph --oneline`
+### 5. Melihat riwayat commit menggunakan `git log --graph --oneline`
 ![Git Log](./images/gitlog.png)
 
 ---
