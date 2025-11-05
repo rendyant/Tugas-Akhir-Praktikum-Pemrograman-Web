@@ -16,16 +16,19 @@ Langkah-langkah yang dilakukan antara lain:
 
 ## ⚙️ Dokumentasi Proses Git
 
-### 1. Menambahkan file dan commit perubahan
+### 1. Inisialisasi dan Perubahan File
+![Git Init](./images/InisialisasiFile.png)
+
+### 2. Menambahkan file dan commit perubahan
 ![Git Add dan Commit](./images/addperubahn.png)
 
-### 2. Membuat dan berpindah branch untuk percobaan
+### 3. Membuat dan berpindah branch untuk percobaan
 ![Branch Trying](./images/branch.png)
 
-### 3. Melakukan commit pada branch baru
+### 4. Melakukan commit pada branch baru
 ![Git Add File](./images/gitaddfile.png)
 
-### 4. Melihat riwayat commit menggunakan `git log --graph --oneline`
+### 5. Melihat riwayat commit menggunakan `git log --graph --oneline`
 ![Git Log](./images/gitlog.png)
 
 ---
