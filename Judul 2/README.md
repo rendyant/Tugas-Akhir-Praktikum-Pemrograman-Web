@@ -58,10 +58,10 @@ Penggunaan Git pada proyek ini bertujuan untuk:
 ## 📷 Dokumentasi Perubahan Tampilan
 
 ### Sebelum Perubahan
-![Sebelum Perubahan](./sebelumperubahan.png)
+![Sebelum Perubahan](./images/sebelumperubahan.png)
 
 ### Setelah Perubahan
-![Setelah Perubahan](./setelahperubahan.png)
+![Setelah Perubahan](./images/setelahperubahan.png)
 
 ---
 
