@@ -29,8 +29,8 @@
 |----------------|------------------|
 | `Initial commit` | Inisialisasi proyek |
 | `index.html dan style.css` | Menambahkan file utama halaman web |
-| 'git merge | Menggabungkan |
-| 'git branch' | Membuat branch |
+| `git merge` | Menggabungkan |
+| `git branch` | Membuat branch |
 
 ---
 
