@@ -28,22 +28,9 @@
 | Commit Message | Deskripsi Singkat |
 |----------------|------------------|
 | `Initial commit` | Inisialisasi proyek |
-| `nambahin folder` | Menambahkan struktur folder awal |
 | `index.html dan style.css` | Menambahkan file utama halaman web |
-| `hapus file` | Menghapus file lama yang tidak digunakan |
-| `ganti warna` | Mengubah warna tampilan di CSS |
-| `Add picture sebelumperubahan` | Menambahkan gambar tampilan sebelum perubahan |
-| `add picture setelahperubahan` | Menambahkan gambar tampilan setelah perubahan |
-
----
-
-## 💡 Tujuan Penggunaan Git
-
-Penggunaan Git pada proyek ini bertujuan untuk:
-- Mencatat setiap perubahan yang dilakukan.
-- Menghindari kehilangan versi kerja sebelumnya.
-- Memudahkan pembagian tugas dalam pengembangan web.
-- Mendokumentasikan progres kerja secara terstruktur.
+| 'git merge | Menggabungkan |
+| 'git branch' | Membuat branch |
 
 ---
 
