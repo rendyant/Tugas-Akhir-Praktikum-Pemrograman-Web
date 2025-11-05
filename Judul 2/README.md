@@ -15,6 +15,9 @@
 ![Branch Trying](./images/branch.png)
 ![Git Merge](./images/merge.png)
 
+### 4. Git Remote -V
+![Git Remote](./images/gitremote-v.png)
+
 ### 4. Git Push
 ![Git Push](./images/push-uorigin.png)
 
