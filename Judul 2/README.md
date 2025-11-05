@@ -1,16 +1,4 @@
-
-
----
-
-## 🧠 Deskripsi Proyek
-
-Proyek ini berisi latihan penerapan konsep HTML dan CSS dalam membangun halaman web yang dinamis dan terstruktur. Setiap perubahan kode dan file didokumentasikan menggunakan **Git** untuk memudahkan tracking versi dan kolaborasi.
-
-Langkah-langkah yang dilakukan antara lain:
-- Membuat branch baru (`trying`) untuk menguji perubahan warna tampilan.
-- Melakukan modifikasi pada file `index.html` dan `style.css`.
-- Menambahkan dan menghapus file gambar pendukung untuk dokumentasi.
-- Melakukan commit secara bertahap untuk setiap perubahan agar riwayat pengembangan tetap jelas.
+# Tugas Akhir Judul 2 Praktikum Pemrograman Web
 
 ---
 
