@@ -23,7 +23,7 @@ Langkah-langkah yang dilakukan antara lain:
 ![Git Add dan Commit](./images/gitaddfile.png)
 ![Git Add dan Commit](./images/addperubahn.png)
 
-### 3. Git Merge
+### 3. Membuat branch, pindah branch, merge, dan delete branch
 ![Branch Trying](./images/branch.png)
 ![Git Merge](./images/merge.png)
 
