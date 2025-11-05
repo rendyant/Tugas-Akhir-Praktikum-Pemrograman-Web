@@ -20,7 +20,11 @@ Langkah-langkah yang dilakukan antara lain:
 ![Git Init](./images/InisialisasiFile.png)
 
 ### 2. Menambahkan file dan commit perubahan
+![Git Add dan Commit](./images/gitaddfile.png)
 ![Git Add dan Commit](./images/addperubahn.png)
+
+### 3. Git Merge
+![Git Merge](./images/merge.png)
 
 ### 3. Membuat dan berpindah branch untuk percobaan
 ![Branch Trying](./images/branch.png)
@@ -28,7 +32,10 @@ Langkah-langkah yang dilakukan antara lain:
 ### 4. Melakukan commit pada branch baru
 ![Git Add File](./images/gitaddfile.png)
 
-### 5. Melihat riwayat commit menggunakan `git log --graph --oneline`
+### 5. Git Push
+![Git Push](./images/push-uorigin.png)
+
+### 6. Melihat riwayat commit menggunakan `git log --graph --oneline`
 ![Git Log](./images/gitlog.png)
 
 ---
