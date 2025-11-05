@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
 :root {
     --color-secondary: #f9f9f9; 
-    --color-accent: #00BCD4; 
+    --color-accent: #dac400; 
     --color-text-main: #333333;
     --color-text-light: #777777;
     --font-heading: 'Playfair Display', serif;
