@@ -34,7 +34,6 @@
 | `ganti warna` | Mengubah warna tampilan di CSS |
 | `Add picture sebelumperubahan` | Menambahkan gambar tampilan sebelum perubahan |
 | `add picture setelahperubahan` | Menambahkan gambar tampilan setelah perubahan |
-| `simpan perubahan sebelum pull` | Menyimpan commit terakhir sebelum melakukan pull |
 
 ---
 
