@@ -20,16 +20,14 @@ Langkah-langkah yang dilakukan antara lain:
 ![Git Init](./images/InisialisasiFile.png)
 
 ### 2. Menambahkan file dan commit perubahan
+![Branch Trying](./images/branch.png)
 ![Git Add dan Commit](./images/gitaddfile.png)
 ![Git Add dan Commit](./images/addperubahn.png)
 
 ### 3. Git Merge
 ![Git Merge](./images/merge.png)
 
-### 3. Membuat dan berpindah branch untuk percobaan
-![Branch Trying](./images/branch.png)
-
-### 4. Melakukan commit pada branch baru
+### 4. Git add file dan commit -m
 ![Git Add File](./images/gitaddfile.png)
 
 ### 5. Git Push
