@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GEMA Tech — Perangkat & Akademi Coding</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#111214;
+      --muted:#9aa0a6;
+      --accent:#facc15;
+    }
+    body{background:var(--bg); color:#fff;}
+    a{color:var(--accent);}
+    .card { background:var(--card); }
+    .muted{ color:var(--muted); }
+    .img-cover{ width:100%; height:220px; object-fit:cover; border-radius:8px; }
+  </style>
+</head>
+
+<body class="antialiased font-sans">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+
+        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3v2M16 3v2M8 19v2M16 19v2M3 8h2M19 8h2M3 16h2M19 16h2M8 8h8v8H8z"/></svg>
+        <div>
+          <div class="text-xl font-bold tracking-wider">GEMA Tech</div>
+          <div class="text-xs muted">Perangkat • Solusi • Akademi</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm muted">
+        <a href="#home" class="hover:text-white">Beranda</a>
+        <a href="#products" class="hover:text-white">Produk</a>
+        <a href="#academy" class="hover:text-white">Akademi</a>
+        <a href="#team" class="hover:text-white">Tim</a>
+        <a href="#contact" class="hover:text-white">Kontak</a>
+      </nav>
+    </div>
+    <div class="border-t" style="border-color:#151515"></div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
+    <div class="md:w-1/2">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Solusi Teknologi & Akademi Coding — Semua di Satu Tempat</h1>
+      <p class="mt-4 muted max-w-xl">GEMA Tech menyediakan produk laptop, PC rakitan, monitor, dan aksesoris profesional — plus kelas coding bersertifikat. Fokus kami: kualitas, layanan purna jual, dan pengembangan kompetensi.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#products" class="inline-block bg-[var(--accent)] text-black px-5 py-2 rounded-lg font-semibold hover:opacity-95">Lihat Produk</a>
+        <a href="#academy" class="inline-block border border-gray-700 px-5 py-2 rounded-lg muted hover:text-white">Gabung Kelas</a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-4 card rounded-lg">
+          <div class="flex items-start gap-3">
+            <!-- icon -->
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h18M3 12h18M3 17h18"/></svg>
+            <div>
+              <div class="text-sm font-semibold">Pilihan Terlengkap</div>
+              <div class="text-xs muted">Laptop, PC, komponen, & aksesoris</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 card rounded-lg">
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20v-6M8 10h8M8 14h8"/></svg>
+            <div>
+              <div class="text-sm font-semibold">Kelas Praktis</div>
+              <div class="text-xs muted">Proyek nyata & mentor industri</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-1/2 flex justify-center">
+      <img src="https://images.unsplash.com/photo-1648737966636-2fc3a5fffc8a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070" alt="Hero" style="width:100%; max-width:560px; border-radius:12px; box-shadow:0 6px 30px rgba(0,0,0,0.6); object-fit:cover;">
+    </div>
+  </section>
+
+  <div class="border-t" style="border-color:#151515"></div>
+
+  <!-- FEATURES -->
+  <section id="features" class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-6 rounded-xl">
+        <!-- cpu icon -->
+        <svg class="w-8 h-8 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3v2M16 3v2M8 19v2M16 19v2M3 8h2M19 8h2M3 16h2M19 16h2M8 8h8v8H8z"/></svg>
+        <h4 class="font-semibold text-lg">Perangkat Berkualitas</h4>
+        <p class="mt-2 muted text-sm">Laptop & PC dari vendor terkemuka, spesifikasi terkini, garansi resmi.</p>
+      </div>
+
+      <div class="card p-6 rounded-xl">
+        <svg class="w-8 h-8 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20v-6M8 10h8M8 14h8"/></svg>
+        <h4 class="font-semibold text-lg">Akademi & Pelatihan</h4>
+        <p class="mt-2 muted text-sm">Kurikulum praktis: Web Dev, Python, Data, Jaringan, & Security.</p>
+      </div>
+
+      <div class="card p-6 rounded-xl">
+        <svg class="w-8 h-8 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l1.5 3.5L17 6l-3 2 1 4L12 11 9 12l1-4-3-2 3.5-.5L12 2z"/></svg>
+        <h4 class="font-semibold text-lg">Dukungan Profesional</h4>
+        <p class="mt-2 muted text-sm">Layanan after-sales, pemasangan, dan konsultasi IT untuk bisnis.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="border-t" style="border-color:#151515"></div>
+
+  <!-- PRODUCTS (informative) -->
+  <section id="products" class="max-w-7xl mx-auto px-6 py-14">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h3 class="text-2xl font-bold">Produk & Penjualan</h3>
+        <div class="muted text-sm">Kategori, spesifikasi inti, dan kisaran harga, ringkas & jelas.</div>
+      </div>
+      <div class="muted text-sm">Update stok & harga dapat berubah. Hubungi untuk penawaran terbaik.</div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Laptop Card -->
+      <article class="card p-6 rounded-xl">
+        <img class="img-cover mb-4" src="https://images.unsplash.com/photo-1659135890084-930731031f40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjYm9vayUyMGFpciUyMG0yfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" alt="Laptop">
+        <h4 class="text-lg font-semibold">Macbook Air M2</h4>
+        <p class="muted text-sm mt-1">CPU 8-core dan GPU 10-core • 16GB RAM • SSD 512GB • Layar 14" FHD</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="text-yellow-400 font-bold">Rp 20.999.000</div>
+          <a href="#contact" class="text-sm border border-gray-700 px-3 py-1 rounded hover:bg-gray-800 muted">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- PC Build -->
+      <article class="card p-6 rounded-xl">
+        <img class="img-cover mb-4" src="https://images.unsplash.com/photo-1622013378145-e8d89cfbd990?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="PC">
+        <h4 class="text-lg font-semibold">GEMA PC SAMSUNG</h4>
+        <p class="muted text-sm mt-1">CPU Ryzen 7 • RTX 4070 • 32GB RAM • NVMe 1TB</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="text-yellow-400 font-bold">Rp 32.499.000</div>
+          <a href="#contact" class="text-sm border border-gray-700 px-3 py-1 rounded hover:bg-gray-800 muted">Tanyakan</a>
+        </div>
+      </article>
+
+      <!-- Monitor & Accessories -->
+      <article class="card p-6 rounded-xl">
+        <img class="img-cover mb-4" src="https://images.unsplash.com/photo-1623061379396-5f24465c64c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074" alt="Monitor">
+        <h4 class="text-lg font-semibold">GEMA Vision 4K</h4>
+        <p class="muted text-sm mt-1">Monitor 27" 4K • Delta-E rendah • HDR • Konektivitas lengkap</p>
+        <div class="mt-3 flex items-center justify-between">
+          <div class="text-yellow-400 font-bold">Rp 17.799.000</div>
+          <a href="#contact" class="text-sm border border-gray-700 px-3 py-1 rounded hover:bg-gray-800 muted">Order</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- product details grid (extra informative rows) -->
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="card p-6 rounded-xl">
+        <h4 class="font-semibold">Mengapa memilih produk GEMA?</h4>
+        <ul class="mt-3 muted text-sm space-y-2">
+          <li>• Jaminan garansi resmi 1–3 tahun (tergantung produk).</li>
+          <li>• Test kualitas & validasi sebelum pengiriman.</li>
+          <li>• Pilihan konfigurasi custom untuk kebutuhan khusus.</li>
+        </ul>
+      </div>
+      <div class="card p-6 rounded-xl">
+        <h4 class="font-semibold">Pilihan pembayaran & pengiriman</h4>
+        <ul class="mt-3 muted text-sm space-y-2">
+          <li>• Pembayaran: transfer bank, kartu, cicilan (via mitra).</li>
+          <li>• Pengiriman: kurir nasional + opsi pengantaran khusus untuk kantor.</li>
+          <li>• Layanan instalasi & setup tersedia untuk paket bisnis.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="border-t" style="border-color:#151515"></div>
+
+  <!-- ACADEMY (detailed) -->
+  <section id="academy" class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card p-6 rounded-xl">
+        <h3 class="text-xl font-bold">GEMA Tech Academy — Ringkasan Program</h3>
+        <p class="muted mt-2 text-sm">Program intensif berbasis proyek, durasi 6–12 minggu per track, modul praktis, dan mentoring 1:1.</p>
+
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="font-semibold">Web Development (Front-end & Back-end)</div>
+            <div class="muted text-sm">HTML, CSS, JavaScript, React, Node.js — termasuk deployment & CI/CD.</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Data Science & Python</div>
+            <div class="muted text-sm">Python, Pandas, Machine Learning dasar, visualisasi, serta studi kasus.</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Jaringan & Infrastruktur</div>
+            <div class="muted text-sm">Konsep jaringan, server, virtualisasi, dan manajemen infrastruktur.</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center gap-3">
+          <div class="px-3 py-2 rounded bg-[var(--accent)] text-black font-semibold">Mulai Rp 1.200.000</div>
+          <a href="#contact" class="muted text-sm hover:text-white">Minta detail jadwal</a>
+        </div>
+      </div>
+
+      <div class="card p-6 rounded-xl">
+        <h3 class="text-xl font-bold">Fasilitas & Metode</h3>
+        <ul class="mt-3 muted text-sm space-y-2">
+          <li>• Sesi live & rekaman materi.</li>
+          <li>• Proyek akhir & portofolio untuk setiap peserta.</li>
+          <li>• Sertifikat digital dan rekomendasi kerja (untuk peserta berprestasi).</li>
+          <li>• Grup alumni & akses ke materi pembaruan.</li>
+        </ul>
+
+        <div class="mt-6">
+          <div class="font-semibold">Syarat & Pendaftaran</div>
+          <div class="muted text-sm mt-2">Pendaftaran online — isi form kontak, tim kami akan menghubungi untuk proses pendaftaran dan pembayaran.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="border-t" style="border-color:#151515"></div>
+
+  <!-- TEAM -->
+  <section id="team" class="max-w-7xl mx-auto px-6 py-14">
+    <h3 class="text-2xl font-bold mb-6">Tim Pengajar & Teknis</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-6 rounded-xl text-center">
+        <img src="https://i.pinimg.com/736x/c7/40/e1/c740e1c5e7419ecfb46fd768d02e551a.jpg" alt="Budi" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <div class="font-semibold">Harry James Potter</div>
+        <div class="muted text-sm">Mentor Web Development — 8 tahun pengalaman</div>
+        <div class="mt-3 flex items-center justify-center gap-3">
+          <!-- linkedin svg -->
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 0 1 6 6v6h-4v-5a2 2 0 0 0-4 0v5h-4v-10h4v2"/></svg>
+        </div>
+      </div>
+
+      <div class="card p-6 rounded-xl text-center">
+        <img src="https://i.pinimg.com/736x/89/6d/01/896d01f266612e52f1431b44e90d90a2.jpg" alt="Sinta" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <div class="font-semibold">Hermione Jean Granger</div>
+        <div class="muted text-sm">Mentor Data Science — fokus ML & visualisasi</div>
+        <div class="mt-3 flex items-center justify-center gap-3">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 0 1 6 6v6h-4v-5a2 2 0 0 0-4 0v5h-4v-10h4v2"/></svg>
+        </div>
+      </div>
+
+      <div class="card p-6 rounded-xl text-center">
+        <img src="https://i.pinimg.com/1200x/21/61/27/21612792b38d740daf2254b264c53732.jpg" alt="Andi" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <div class="font-semibold">Ronald Weasley</div>
+        <div class="muted text-sm">Teknisi & Konsultan IT — integrasi & support</div>
+        <div class="mt-3 flex items-center justify-center gap-3">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--accent)"><path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 0 1 6 6v6h-4v-5a2 2 0 0 0-4 0v5h-4v-10h4v2"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="border-t" style="border-color:#151515"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid md:grid-cols-2 gap-6 items-start">
+      <div class="card p-6 rounded-xl">
+        <h4 class="text-lg font-semibold">Alamat & Informasi</h4>
+        <p class="muted text-sm mt-2">Jl. Sekolah, Pringsewu — Layanan penjualan & pelatihan: Senin–Sabtu, 09:00–18:00</p>
+        <div class="mt-4">
+          <div class="muted text-sm">Email: <a href="mailto:officialgematech@gmail.com" class="text-yellow-300">officialgematech@gmail.com</a></div>
+          <div class="muted text-sm mt-1">Telp/WA: <a href="#" class="text-yellow-300">+62 857-8966-0026</a></div>
+        </div>
+      </div>
+
+      <form class="card p-6 rounded-xl" action="#" method="POST">
+  <h4 class="text-lg font-semibold mb-3">Kirim Pesan</h4>
+
+  <label class="block text-sm muted">Nama</label>
+  <input 
+    class="w-full mt-2 p-3 rounded bg-[#1a1a1a] border border-gray-700 text-gray-600 placeholder-gray-500 focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition"
+    name="nama" 
+    placeholder="Tulis nama Anda"
+  />
+
+  <label class="block text-sm muted mt-3">Email</label>
+  <input 
+    class="w-full mt-2 p-3 rounded bg-[#1a1a1a] border border-gray-700 text-gray-600 placeholder-gray-500 focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition"
+    name="email" 
+    placeholder="Alamat email aktif"
+  />
+
+  <label class="block text-sm muted mt-3">Pesan</label>
+  <textarea 
+    class="w-full mt-2 p-3 rounded bg-[#1a1a1a] border border-gray-700 text-gray-600 placeholder-gray-500 focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition" 
+    rows="4" 
+    name="pesan"
+    placeholder="Tulis pesan Anda di sini..."
+  ></textarea>
+
+  <div class="mt-5 flex justify-end">
+    <button 
+      class="px-6 py-2.5 rounded-lg bg-[var(--accent)] text-[#facc15] font-bold hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-yellow-500/20"
+    >
+      Kirim Pesan
+    </button>
+  </div>
+</form>
+
+    </div>
+  </section>
+
+  <div class="border-t" style="border-color:#151515"></div>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-4">
+        <span class="text-yellow-400 font-semibold">GEMA Tech</span> — Perangkat & Akademi Coding
+      </div>
+      <div class="muted text-sm">© 2025 GEMA Tech. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
