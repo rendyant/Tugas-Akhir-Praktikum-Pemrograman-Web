@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #1a1a1c;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .calculator {
+      width: 100%;
+      max-width: 400px;
+      background: #424245;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      padding: 28px 20px 20px 20px;
+      border: 1px solid #ffffff;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .display {
+      background: #18181b;
+      border-radius: 12px;
+      padding: 20px 16px 16px 16px;
+      margin-bottom: 18px;
+      min-height: 70px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    }
+
+    .expression {
+      color: #a1a1aa;
+      font-size: 15px;
+      min-height: 20px;
+      text-align: right;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 8px;
+      word-wrap: break-word;
+      opacity: 0.8;
+    }
+
+    .screen {
+      color: #fff;
+      font-size: 40px;
+      font-family: 'Courier New', monospace;
+      text-align: right;
+      overflow-x: auto;
+      white-space: nowrap;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 0 #fff;
+    }
+
+    .memory-bar {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 10px;
+      padding: 8px;
+      background: #232326;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .mem-btn {
+      flex: 1;
+      padding: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #18181b;
+      color: #a1a1aa;
+      transition: all 0.15s;
+      box-shadow: none;
+      border: 1px solid #2d2d31;
+    }
+
+    .mem-btn:hover {
+      background: #2d2d31;
+      color: #fff;
+    }
+
+    .mem-btn:active {
+      transform: scale(0.95);
+      background: #3f3f46;
+      color: #fff;
+    }
+
+    .mem-btn.active {
+      background: #6366f1;
+      color: #fff;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 16px 8px;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: #18181b;
+      color: #fff;
+      box-shadow: none;
+      border: 1px solid #2d2d31;
+    }
+
+    button:hover {
+      background: #2d2d31;
+      color: #fff;
+    }
+
+    button:active {
+      transform: scale(0.95);
+      background: #3f3f46;
+      color: #fff;
+    }
+
+    .btn-op {
+      background: #18181b;
+      color: #60a5fa;
+      font-weight: 700;
+      box-shadow: none;
+    }
+
+    .btn-op:hover {
+      background: #2d2d31;
+      color: #fff;
+    }
+
+    .btn-func {
+      background: #232326;
+      color: #a1a1aa;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: none;
+    }
+
+    .btn-func:hover {
+      background: #2d2d31;
+      color: #fff;
+    }
+
+    .btn-equal {
+      background: #2563eb;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: none;
+    }
+
+    .btn-equal:hover {
+      background: #1e40af;
+      color: #fff;
+    }
+
+    .btn-clear {
+      background: #ef4444;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: none;
+    }
+
+    .btn-clear:hover {
+      background: #991b1b;
+      color: #fff;
+    }
+
+    .history {
+      margin-top: 16px;
+      padding: 10px;
+      background: #232326;
+      border-radius: 10px;
+      max-height: 100px;
+      overflow-y: auto;
+      display: none;
+      box-shadow: none;
+    }
+
+    .history.show {
+      display: block;
+    }
+
+    .history-title {
+      color: #a1a1aa;
+      font-size: 12px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .history-item {
+      color: #fff;
+      font-size: 13px;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 4px;
+      padding: 4px 8px;
+      background: #18181b;
+      border-radius: 6px;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="header">
+      <div class="title">Scientific</div>
+    </div>
+
+    <div class="display">
+      <div class="expression" id="expression"></div>
+      <div class="screen" id="display">0</div>
+    </div>
+
+    <div class="memory-bar">
+      <button class="mem-btn" id="mc-btn" onclick="memoryClear()" title="Clear memory & history">MC</button>
+      <button class="mem-btn" id="mr-btn" onclick="memoryRecall()" title="Recall memory value">MR</button>
+      <button class="mem-btn" onclick="memoryStore()" title="Store current value">MS</button>
+      <button class="mem-btn" onclick="memoryAdd()" title="Add to memory">M+</button>
+      <button class="mem-btn" onclick="memorySubtract()" title="Subtract from memory">M−</button>
+      <span id="mem-display" style="font-size: 11px; color: #666; margin-left: 8px; align-self: center;"></span>
+    </div>
+
+    <div class="buttons" style="margin-bottom: 6px;">
+      <button class="btn-func" onclick="addFunction('(')">(</button>
+      <button class="btn-func" onclick="addFunction(')')">)</button>
+      <button class="btn-func" onclick="insertConstant('π')">π</button>
+      <button class="btn-func" onclick="insertConstant('e')">e</button>
+      <button class="btn-func" onclick="applyFunction('!')">n!</button>
+    </div>
+
+    <div class="buttons" style="margin-bottom: 6px;">
+      <button class="btn-func" onclick="applyFunction('sin')">sin</button>
+      <button class="btn-func" onclick="applyFunction('cos')">cos</button>
+      <button class="btn-func" onclick="applyFunction('tan')">tan</button>
+      <button class="btn-func" onclick="applyFunction('√')">√</button>
+      <button class="btn-func" onclick="applyFunction('x²')">x²</button>
+    </div>
+
+    <div class="buttons" style="margin-bottom: 6px;">
+      <button class="btn-func" onclick="applyFunction('log')">log</button>
+      <button class="btn-func" onclick="applyFunction('ln')">ln</button>
+      <button class="btn-func" onclick="addOperator('^')">x^y</button>
+      <button class="btn-func" onclick="applyFunction('1/x')">1/x</button>
+      <button class="btn-func" onclick="applyFunction('abs')">|x|</button>
+    </div>
+
+    <div class="buttons">
+      <button class="btn-clear" onclick="clear()">C</button>
+      <button class="btn-op" onclick="clearEntry()">CE</button>
+      <button class="btn-op" onclick="backspace()">⌫</button>
+      <button class="btn-op" onclick="addOperator('÷')">÷</button>
+      <button class="btn-op" onclick="applyFunction('±')">±</button>
+
+      <button onclick="digit('7')">7</button>
+      <button onclick="digit('8')">8</button>
+      <button onclick="digit('9')">9</button>
+      <button class="btn-op" onclick="addOperator('×')">×</button>
+      <button class="btn-func" onclick="applyFunction('%')">%</button>
+
+      <button onclick="digit('4')">4</button>
+      <button onclick="digit('5')">5</button>
+      <button onclick="digit('6')">6</button>
+      <button class="btn-op" onclick="addOperator('−')">−</button>
+      <button class="btn-func" onclick="applyFunction('exp')">exp</button>
+
+      <button onclick="digit('1')">1</button>
+      <button onclick="digit('2')">2</button>
+      <button onclick="digit('3')">3</button>
+      <button class="btn-op" onclick="addOperator('+')">+</button>
+      <button class="btn-func" onclick="addOperator('mod')">mod</button>
+
+      <button onclick="digit('0')">0</button>
+      <button onclick="decimal()">.</button>
+      <button onclick="equals()" class="btn-equal" style="grid-column: span 3;">=</button>
+    </div>
+
+    <div class="history" id="history">
+      <div class="history-title">HISTORY</div>
+      <div id="history-list"></div>
+    </div>
+  </div>
+
+  <script>
+    let currentValue = '0';
+    let expression = '';
+    let waitingForOperand = false;
+    let history = [];
+    let memory = null;
+    let lastResult = null;
+
+    function addToHistory(entry) {
+      history = [entry, ...history].slice(0, 10);
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      document.getElementById('display').textContent = currentValue;
+      document.getElementById('expression').textContent = expression;
+      
+      // Update memory indicator
+      const memDisplay = document.getElementById('mem-display');
+      if (memory !== null && memory !== 0) {
+        memDisplay.textContent = `M: ${memory}`;
+      } else {
+        memDisplay.textContent = '';
+      }
+      
+      const mcBtn = document.getElementById('mc-btn');
+      const mrBtn = document.getElementById('mr-btn');
+      if (memory !== null && memory !== 0) {
+        mcBtn.classList.add('active');
+        mrBtn.classList.add('active');
+      } else {
+        mcBtn.classList.remove('active');
+        mrBtn.classList.remove('active');
+      }
+
+      const historyEl = document.getElementById('history');
+      const historyList = document.getElementById('history-list');
+      if (history.length > 0) {
+        historyEl.classList.add('show');
+        historyList.innerHTML = history.map(h => 
+          `<div class="history-item">${h}</div>`
+        ).join('');
+      } else {
+        historyEl.classList.remove('show');
+      }
+    }
+
+    function digit(d) {
+      if (currentValue === 'Error') {
+        clear();
+      }
+      
+      if (waitingForOperand) {
+        currentValue = d;
+        waitingForOperand = false;
+      } else {
+        currentValue = currentValue === '0' ? d : currentValue + d;
+      }
+      updateDisplay();
+    }
+
+    function decimal() {
+      if (currentValue === 'Error') {
+        clear();
+      }
+      
+      if (waitingForOperand) {
+        currentValue = '0.';
+        waitingForOperand = false;
+      } else if (!currentValue.includes('.')) {
+        currentValue += '.';
+      }
+      updateDisplay();
+    }
+
+    function addOperator(op) {
+      if (currentValue === 'Error') return;
+      // Build up the expression string for correct operator precedence
+      if (waitingForOperand && /[+\-×÷^%mod]$/.test(expression.trim())) {
+        // Replace last operator if user presses another operator
+        expression = expression.replace(/[+\-×÷^%mod]+$/, op);
+        updateDisplay();
+        return;
+      }
+      if (expression === '') {
+        expression = currentValue + ' ' + op;
+      } else {
+        expression += ' ' + currentValue + ' ' + op;
+      }
+      waitingForOperand = true;
+      updateDisplay();
+    }
+
+    function addFunction(fn) {
+      if (currentValue === 'Error') {
+        clear();
+      }
+      
+      if (waitingForOperand) {
+        currentValue = fn;
+        waitingForOperand = false;
+      } else {
+        currentValue += fn;
+      }
+      updateDisplay();
+    }
+
+    function insertConstant(constant) {
+      if (currentValue === 'Error') {
+        clear();
+      }
+      
+      let value;
+      if (constant === 'π') {
+        value = Math.PI;
+      } else if (constant === 'e') {
+        value = Math.E;
+      }
+      
+      if (waitingForOperand || currentValue === '0') {
+        currentValue = String(value);
+        waitingForOperand = false;
+      } else {
+        currentValue = String(value);
+      }
+      updateDisplay();
+    }
+
+    function backspace() {
+      if (currentValue === 'Error') {
+        clear();
+        return;
+      }
+      
+      if (!waitingForOperand) {
+        currentValue = currentValue.length > 1 ? currentValue.slice(0, -1) : '0';
+        updateDisplay();
+      }
+    }
+
+    function clear() {
+      currentValue = '0';
+      expression = '';
+      waitingForOperand = false;
+      updateDisplay();
+    }
+
+    function clearEntry() {
+      currentValue = '0';
+      waitingForOperand = false;
+      updateDisplay();
+    }
+
+    function factorial(n) {
+      if (n < 0 || !Number.isInteger(n)) return NaN;
+      if (n === 0 || n === 1) return 1;
+      if (n > 170) return Infinity;
+      let result = 1;
+      for (let i = 2; i <= n; i++) result *= i;
+      return result;
+    }
+
+    function applyFunction(fn) {
+      if (currentValue === 'Error') return;
+      
+      const v = parseFloat(currentValue);
+      let r;
+      let operation = '';
+      
+      switch(fn) {
+        case 'sin': 
+          r = Math.sin(v);
+          operation = `sin(${v})`;
+          break;
+        case 'cos': 
+          r = Math.cos(v);
+          operation = `cos(${v})`;
+          break;
+        case 'tan': 
+          r = Math.tan(v);
+          operation = `tan(${v})`;
+          break;
+        case '√': 
+          r = Math.sqrt(v);
+          operation = `√(${v})`;
+          break;
+        case 'x²': 
+          r = v * v;
+          operation = `(${v})²`;
+          break;
+        case 'log': 
+          r = Math.log10(v);
+          operation = `log(${v})`;
+          break;
+        case 'ln': 
+          r = Math.log(v);
+          operation = `ln(${v})`;
+          break;
+        case '±': 
+          r = -v;
+          operation = `±(${v})`;
+          break;
+        case '%': 
+          r = v / 100;
+          operation = `${v}%`;
+          break;
+        case '1/x': 
+          r = v !== 0 ? 1 / v : NaN;
+          operation = `1/(${v})`;
+          break;
+        case 'abs': 
+          r = Math.abs(v);
+          operation = `|${v}|`;
+          break;
+        case 'exp': 
+          r = Math.exp(v);
+          operation = `exp(${v})`;
+          break;
+        case '!': 
+          r = factorial(Math.floor(v));
+          operation = `${Math.floor(v)}!`;
+          break;
+        default: r = v;
+      }
+      
+      if (isNaN(r) || !isFinite(r)) {
+        currentValue = 'Error';
+        addToHistory(`${operation} = Error`);
+      } else {
+        const roundedResult = Math.round(r * 1e10) / 1e10;
+        currentValue = String(roundedResult);
+        addToHistory(`${operation} = ${roundedResult}`);
+        lastResult = roundedResult;
+      }
+      
+      waitingForOperand = true;
+      updateDisplay();
+    }
+
+    function evaluateExpression(expr) {
+      try {
+        // Ganti operator ke format JavaScript
+        let processedExpr = expr.trim()
+          .replace(/×/g, '*')
+          .replace(/÷/g, '/')
+          .replace(/−/g, '-')
+          .replace(/\^/g, '**')
+          .replace(/\bmod\b/g, '%');
+        
+        // Evaluasi dengan Function untuk operator precedence otomatis
+        const result = Function('"use strict"; return (' + processedExpr + ')')();
+        
+        if (!isFinite(result) || isNaN(result)) {
+          return 'Error';
+        }
+        
+        return Math.round(result * 1e10) / 1e10;
+      } catch (e) {
+        return 'Error';
+      }
+    }
+
+    function equals() {
+      if (currentValue === 'Error') return;
+      
+      if (expression && !waitingForOperand) {
+        const fullExpression = expression + ' ' + currentValue;
+        const result = evaluateExpression(fullExpression);
+        
+        if (result !== 'Error') {
+          const roundedResult = Math.round(result * 1e10) / 1e10;
+          addToHistory(`${fullExpression} = ${roundedResult}`);
+          currentValue = String(roundedResult);
+          expression = '';
+          waitingForOperand = true;
+          lastResult = roundedResult;
+        } else {
+          currentValue = 'Error';
+          expression = '';
+          addToHistory(`${fullExpression} = Error`);
+        }
+      } else if (expression && waitingForOperand) {
+        expression = '';
+      }
+      
+      updateDisplay();
+    }
+
+    function memoryStore() {
+      if (currentValue !== 'Error') {
+        memory = parseFloat(currentValue);
+        addToHistory(`MS: Stored ${memory}`);
+        updateDisplay();
+      }
+    }
+
+    function memoryAdd() {
+      if (currentValue !== 'Error') {
+        const value = parseFloat(currentValue);
+        if (memory === null) {
+          memory = 0;
+        }
+        const oldMemory = memory;
+        memory = memory + value;
+        addToHistory(`M+: ${oldMemory} + ${value} = ${memory}`);
+        currentValue = String(memory);
+        waitingForOperand = true;
+        updateDisplay();
+      }
+    }
+
+    function memorySubtract() {
+      if (currentValue !== 'Error') {
+        const value = parseFloat(currentValue);
+        if (memory === null) {
+          memory = 0;
+        }
+        const oldMemory = memory;
+        memory = memory - value;
+        addToHistory(`M-: ${oldMemory} - ${value} = ${memory}`);
+        currentValue = String(memory);
+        waitingForOperand = true;
+        updateDisplay();
+      }
+    }
+
+    function memoryRecall() {
+      if (memory !== null) {
+        currentValue = String(memory);
+        addToHistory(`MR: Recalled ${memory}`);
+        waitingForOperand = true;
+        updateDisplay();
+      }
+    }
+
+    function memoryClear() {
+      memory = null;
+      addToHistory(`MC: Memory cleared`);
+      updateDisplay();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key >= '0' && e.key <= '9') digit(e.key);
+      else if (e.key === '.') decimal();
+      else if (e.key === '+') addOperator('+');
+      else if (e.key === '-') addOperator('−');
+      else if (e.key === '*') addOperator('×');
+      else if (e.key === '/') { e.preventDefault(); addOperator('÷'); }
+      else if (e.key === 'Enter' || e.key === '=') equals();
+      else if (e.key === 'Escape') clear();
+      else if (e.key === 'Backspace') backspace();
+    });
+
+    updateDisplay();
+  </script>
+</body>
+</html>
