@@ -1,5 +1,4 @@
-
-# Kalkulator Saintifik - Penjelasan Kode
+# Calculator Scientific 
 
 Kalkulator Scientific berbasis web yang dibuat dengan HTML, CSS, dan JavaScript dasar (tanpa framework).
 
